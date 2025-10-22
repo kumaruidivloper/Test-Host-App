@@ -72,7 +72,7 @@ struct ContentView: View {
             messageText: $messageText,
             messageDate: $messageDate,
             webViewStore: webViewStore,
-            mfeUrl: "http://localhost:4201/main.js"
+            mfeUrl: "https://kumaruidivloper.github.io/Test-Host-App/src/assets/mfe/main_NoZone.js"
         )
         .frame(height: 400)
     }
