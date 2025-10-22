@@ -138,7 +138,7 @@ struct WebView: UIViewRepresentable {
             // Convert timestamp to readable date
             let date = Date(timeIntervalSince1970: timestamp / 1000)
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.dateFormat = "dd-MM-yyyy HH:mm:ss a"
             let dateString = formatter.string(from: date)
             
             // Update individual fields
