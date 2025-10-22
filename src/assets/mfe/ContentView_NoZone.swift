@@ -94,7 +94,15 @@ struct ContentView: View {
           Time: '\(dateString)'
         }, '*');
         """
-        
+
+         let messageObject = """
+        {
+          "from": "host",
+          "text": "Hello from iOS Host!",
+          "Time": "\(dateString)"
+        }
+        """
+        print("Message To MFE: \(messageObject)")
         webView.evaluateJavaScript(script) { result, error in
             if let error = error {
                 print("❌ Error sending message: \(error.localizedDescription)")
