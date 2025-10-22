@@ -14,7 +14,7 @@ struct WebView: UIViewRepresentable {
     @Binding var messageText: String
     @Binding var messageDate: String
     var webViewStore: WebViewStore
-    var mfeUrl: String = "http://localhost:4201/main.js"
+    var mfeUrl: String = "https://kumaruidivloper.github.io/Test-Host-App/src/assets/mfe/main_NoZone.js"
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -86,7 +86,7 @@ struct WebView: UIViewRepresentable {
         </html>
         """
 
-        webView.loadHTMLString(html, baseURL: URL(string: "http://localhost:4201/"))
+        webView.loadHTMLString(html, baseURL: URL(string: "https://kumaruidivloper.github.io/Test-Host-App/src/assets/mfe/"))
         return webView
     }
 
