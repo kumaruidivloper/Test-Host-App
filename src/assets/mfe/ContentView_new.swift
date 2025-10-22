@@ -27,7 +27,7 @@ struct ContentView: View {
                 } else {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
-                            Text("From:")
+                            Text("Received From:")
                                 .font(.caption)
                                 .foregroundColor(.gray)
                             Text(messageFrom)
@@ -36,7 +36,7 @@ struct ContentView: View {
                         }
                         
                         HStack {
-                            Text("Message:")
+                            Text("Received Message:")
                                 .font(.caption)
                                 .foregroundColor(.gray)
                             Text(messageText)
@@ -44,7 +44,7 @@ struct ContentView: View {
                         }
                         
                         HStack {
-                            Text("Time:")
+                            Text("Received Time:")
                                 .font(.caption)
                                 .foregroundColor(.gray)
                             Text(messageDate)
