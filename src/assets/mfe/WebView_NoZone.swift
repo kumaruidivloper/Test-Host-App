@@ -54,7 +54,9 @@ struct WebView: UIViewRepresentable {
         </head>
         <body>
           <div id="status">Loading MFE...</div>
-          <div id="mfe-container"></div>
+          <!--container for load MFE TAG -->
+            <div id="mfe-container"></div>
+          <!--container for load MFE TAG -->
           <div id="mfe"></div>
           <script type="module">
             console.log('📦 Starting MFE load from: \(mfeUrl)');
@@ -63,13 +65,14 @@ struct WebView: UIViewRepresentable {
               .then(() => {
                 console.log('✅ MFE script loaded');
                 document.getElementById('status').textContent = 'MFE created successfully';
-                
-                setTimeout(() => {
+        
+                // Logic for generate MFE TAG run time start
                   const mfeEl = document.createElement('mfe-widget');
                   document.getElementById('mfe-container').appendChild(mfeEl);
                   console.log('✅ MFE widget created');
                   document.getElementById('mfe').textContent = 'MFE loaded successfully';
-                }, 1000);
+                // Logic for generate MFE TAG run time end
+        
               })
               .catch(err => {
                 console.error('❌ Failed to load MFE:', err);
