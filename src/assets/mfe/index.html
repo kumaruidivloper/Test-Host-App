@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HostApp</title>
+</head>
+<body>
+  <h1>This is a Heading</h1>
+  <p>This is a paragraph.</p>
+  
+  <div id="mfe-container"></div>
+  
+  <script type="module">
+  const mfeUrl = "http://localhost:4201/main.js"; // 👈 Update with your actual MFE path
+
+  // Dynamically import the Angular MFE bundle
+  import(mfeUrl)
+    .then(() => {
+      console.log("✅ MFE script loaded successfully");
+      renderMFE();
+    })
+    .catch((err) => {
+      console.error("❌ Failed to load MFE script:", mfeUrl, err);
+    });
+
+  function renderMFE() {
+    const mfeContainer = document.getElementById("mfe-container");
+    if (!mfeContainer) {
+      console.error("❌ mfe-container not found in DOM");
+      return;
+    }
+
+    const mfeElement = document.createElement("mfe-widget");
+    mfeContainer.appendChild(mfeElement);
+    console.log("✅ mfe-widget created and appended");
+  }
+</script>
+</body>
+</html>
